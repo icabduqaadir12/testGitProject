@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
 
 app.get('/wow',(req,res) => {
     res.send({
@@ -9,6 +12,13 @@ app.get('/wow',(req,res) => {
     })
 })
 
+app.post('/api',(req,res) => {
+    console.log(req.body);
+    res.send({
+        batchId: "e4e2e063-a31c-42b7-b6d0-a9837273bec6",
+        messageCount: 6
+    })
+})
 
 
 
